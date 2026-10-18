@@ -1,0 +1,34 @@
+CLASS Bag<T>
+    CREATE an empty list named items
+
+    METHOD add(item)
+        Append item to items
+
+    METHOD remove(item)
+        Find the first position of item in items
+        IF the item was found
+            Remove the item at that position
+
+    METHOD contains(item)
+        Return whether item is present in items
+
+    METHOD count(item)
+        Set occurrences to 0
+        FOR each currentItem in items
+            IF currentItem equals item
+                Increase occurrences by 1
+        Return occurrences
+
+    METHOD toString()
+        Return a readable representation of items
+
+    METHOD main()
+        Create an empty Bag of strings
+        Add several fruit names, including duplicates
+        Print the bag
+        Test contains with an existing and a missing fruit
+        Test count with an existing and a missing fruit
+        Remove a fruit that occurs once
+        Print the bag again
+        Test contains and count for the removed fruit
+END CLASS
