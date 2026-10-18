@@ -5,9 +5,7 @@ CLASS Bag<T>
         Append item to items
 
     METHOD remove(item)
-        Find the first position of item in items
-        IF the item was found
-            Remove the item at that position
+        Remove the first matching item from items, if present
 
     METHOD contains(item)
         Return whether item is present in items
@@ -20,15 +18,16 @@ CLASS Bag<T>
         Return occurrences
 
     METHOD toString()
-        Return a readable representation of items
+        Return items as a string
 
     METHOD main()
         Create an empty Bag of strings
-        Add several fruit names, including duplicates
+        Add apple, banana, apple, orange, and apple
         Print the bag
-        Test contains with an existing and a missing fruit
-        Test count with an existing and a missing fruit
-        Remove a fruit that occurs once
+        Test contains with apple and grape
+        Test count for apple and grape
+        Remove one apple
         Print the bag again
-        Test contains and count for the removed fruit
+        Test contains for apple
+        Test count for apple; the result should be 2
 END CLASS

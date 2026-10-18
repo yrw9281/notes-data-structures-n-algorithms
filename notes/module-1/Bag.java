@@ -2,33 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * A collection that stores elements and allows duplicates.
- *
- * @param <T> the type of elements stored in the bag
- */
+/** A collection that stores elements and allows duplicates. */
 public class Bag<T> {
     private final List<T> items = new ArrayList<>();
 
-    /** Adds one occurrence of an item to the bag. */
+    /** Adds an item to the bag. */
     public void add(T item) {
         items.add(item);
     }
 
-    /** Removes the first matching occurrence, if the item is present. */
+    /** Removes one occurrence of an item, if present. */
     public void remove(T item) {
-        int index = items.indexOf(item);
-        if (index >= 0) {
-            items.remove(index);
-        }
+        items.remove(item);
     }
 
-    /** Returns true when the bag contains at least one matching item. */
+    /** Returns true if the item is in the bag. */
     public boolean contains(T item) {
         return items.contains(item);
     }
 
-    /** Returns the number of occurrences of an item in the bag. */
+    /** Returns the number of times the item appears in the bag. */
     public int count(T item) {
         int occurrences = 0;
         for (T currentItem : items) {
@@ -39,7 +32,7 @@ public class Bag<T> {
         return occurrences;
     }
 
-    /** Returns the bag's contents for display. */
+    /** Returns the bag's contents. */
     @Override
     public String toString() {
         return items.toString();
@@ -53,17 +46,17 @@ public class Bag<T> {
         fruitBag.add("banana");
         fruitBag.add("apple");
         fruitBag.add("orange");
-        fruitBag.add("banana");
+        fruitBag.add("apple");
         System.out.println("Bag contents: " + fruitBag);
 
-        System.out.println("Contains banana: " + fruitBag.contains("banana"));
+        System.out.println("Contains apple: " + fruitBag.contains("apple"));
         System.out.println("Contains grape: " + fruitBag.contains("grape"));
         System.out.println("Count of apple: " + fruitBag.count("apple"));
         System.out.println("Count of grape: " + fruitBag.count("grape"));
 
-        fruitBag.remove("orange");
-        System.out.println("After removing orange: " + fruitBag);
-        System.out.println("Contains orange: " + fruitBag.contains("orange"));
-        System.out.println("Count of orange: " + fruitBag.count("orange"));
+        fruitBag.remove("apple");
+        System.out.println("After removing one apple: " + fruitBag);
+        System.out.println("Contains apple: " + fruitBag.contains("apple"));
+        System.out.println("Count of apple: " + fruitBag.count("apple"));
     }
 }
